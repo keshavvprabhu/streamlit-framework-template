@@ -21,6 +21,34 @@ st.set_page_config(
     layout="wide",
 )
 
+# Apply custom CSS theme (Portfolio Design)
+custom_css = """
+<style>
+h1, h2, h3, h4, h5, h6 {
+    color: #1A1F2E !important;
+    font-weight: 600;
+}
+
+h1 {
+    border-bottom: 3px solid #2B5A8C !important;
+    padding-bottom: 0.75rem !important;
+}
+
+.stButton > button {
+    background-color: #2B5A8C !important;
+    color: white !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+}
+
+.stButton > button:hover {
+    background-color: #4A7BA7 !important;
+    box-shadow: 0 4px 12px rgba(43, 90, 140, 0.3) !important;
+}
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
 # Require admin authentication
 if not require_admin():
     st.stop()

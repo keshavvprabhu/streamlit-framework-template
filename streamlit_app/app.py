@@ -23,6 +23,77 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Apply custom CSS theme (Portfolio Design)
+custom_css = """
+<style>
+:root {
+    --primary-color: #2B5A8C;
+    --secondary-color: #1A1F2E;
+    --accent-color: #4A7BA7;
+    --light-bg: #F5F7FA;
+    --border-color: #E0E5EB;
+    --text-primary: #1A1F2E;
+    --text-secondary: #6B7280;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary-color) !important;
+    font-weight: 600;
+}
+
+h1 {
+    border-bottom: 3px solid var(--primary-color) !important;
+    padding-bottom: 0.75rem !important;
+}
+
+.stButton > button {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton > button:hover {
+    background-color: var(--accent-color) !important;
+    box-shadow: 0 4px 12px rgba(43, 90, 140, 0.3) !important;
+}
+
+.stExpander {
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+}
+
+.stAlert {
+    border-radius: 6px !important;
+    border-left: 4px solid var(--primary-color) !important;
+}
+
+a {
+    color: var(--primary-color) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+a:hover {
+    color: var(--accent-color) !important;
+    text-decoration: underline !important;
+}
+
+.stSidebar {
+    background-color: var(--light-bg) !important;
+}
+
+hr {
+    border: none !important;
+    border-top: 2px solid var(--primary-color) !important;
+    margin: 1.5rem 0 !important;
+}
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
 # Initialize session state
 init_session_state()
 
